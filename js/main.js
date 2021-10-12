@@ -81,12 +81,15 @@ document.getElementById("btnSort").onclick = function () {
 //   console.log("Ascending sort: " +  min + " " + mid + " " + max);
 var stopComment = 0;
 
+
+
 // Bài 2:
 document.getElementById("resultRobot").disabled = true;
 document.getElementById("btnRobot").onclick = function () {
-  var txtQuestion = document.getElementById("question").value;
-  document.getElementById("resultRobot").value = "Xin chào " + txtQuestion;
+    var op = document.getElementById("dropdown_menu").value;
+    document.getElementById("resultRobot").value = "Xin Chào " + op + "!";
 };
+
 
 //Bài 3
 function outputResultTriangle(result) {
