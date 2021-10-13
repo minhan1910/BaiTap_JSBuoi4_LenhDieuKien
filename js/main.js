@@ -4,6 +4,7 @@
 
 //b1: khởi tạo 3 biến x1, x2, x3
 //b2: cho người dùng nhập và gán x1, x2, x3
+//Tìm max và min xong tính tổng 3 số x1,x2,3 ròi lấy tổng 3 số trừ (max + min) là ra được số còn lại
 //b3: sắp xếp tăng dần
 //b4: xuất kết quả ra màn hình
 
@@ -17,33 +18,15 @@ document.getElementById("btnSort").onclick = function () {
     n2 = parseInt(x2),
     n3 = parseInt(x3);
 
-  var max = x1,
-    mid = Number.MIN_SAFE_INTEGER,
-    min = Number.MAX_SAFE_INTEGER;
-
-  if (n2 > max) {
-    mid = max;
-    max = n2;
-  } else if (n2 > mid) {
-    mid = n2;
-  }
-
-  if (n3 > max) {
-    mid = max;
-    max = n3;
-  } else if (n3 > mid) {
-    mid = n3;
-  }
-
-  if (min > n1) {
-    min = n1;
-  }
-  if (min > n2) {
-    min = n2;
-  }
-  if (min > n3) {
-    min = n3;
-  }
+   var max = n1, min = n1, mid;
+	if(n2 > max) max = n2;
+	if(n3 > max) max = n3;
+	
+	if(n2 < min) min = n2;
+	if(n3 < min) min = n3;
+	
+	var sum = n1 + n2 + n3;
+	mid = sum - (max + min);
 
   document.getElementById("resultNumber").value = min + " " + mid + " " + max;
 };
